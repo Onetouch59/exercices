@@ -1,0 +1,30 @@
+/* h1{
+    font-size: 24px;
+    color: blue;
+}
+h2{
+    @extend h1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h3{
+    @extend h2;
+    font-weight: bold;
+}
+button{
+    @extend h2;
+    background-color: red;
+} */
+
+%square{
+    background-color: red;
+}
+.square__small{
+    height: 80px;
+    width: 80px;
+    @extend .square;
+}
+.square__medium{
+    height: 120px;
+    width: 120px;
+    @extend %square;
+}

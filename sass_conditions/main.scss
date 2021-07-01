@@ -1,0 +1,34 @@
+$dark:#000;
+$light:#fff;
+
+@mixin theme-colors($light-theme) {
+    @if ($light-theme == modedark) {
+        color:$dark;
+        background-color:$light ;
+        
+    }@elseif($light-theme == modeblue){
+        color:yellow;
+        background-color: blue;
+        
+    }@elseif($light-theme == modegreen){
+        color:green;
+        background-color:brown;
+
+    }@else{
+        color:$light;
+        background-color:$dark ;
+    }
+}
+
+body{
+    @include theme-colors($light-theme: modedark);
+}
+body span {
+    @include theme-colors($light-theme: light);
+}
+.mode{
+    @include theme-colors($light-theme: modeblue);
+}
+.mode2{
+    @include theme-colors($light-theme: modegreen);
+}

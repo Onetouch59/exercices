@@ -1,0 +1,19 @@
+body {
+  color: #000;
+  background-color: #fff;
+}
+
+body span {
+  color: #fff;
+  background-color: #000;
+}
+
+.mode {
+  color: yellow;
+  background-color: blue;
+}
+
+.mode2 {
+  color: green;
+  background-color: brown;
+}/*# sourceMappingURL=main.css.map */
