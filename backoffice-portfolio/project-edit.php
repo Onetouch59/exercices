@@ -32,31 +32,31 @@ if ($_SESSION['username']) {
 
         <div>
             <label for="input_title">Titre</label>
-            <input type="text" id="input_title" name="project_title">
+            <input type="text" id="input_title" name="project_title" value="<?= $result['project_title'] ?>">
         </div>
         <div>
             <label for="input_begin">Date de démarrage</label>
-            <input type="date" id="input_begin" name="project_begin">
+            <input type="date" id="input_begin" name="project_begin" value="<?= $result['project_begin'] ?>">
         </div>
         <div>
             <label for="input_end">Date de fin</label>
-            <input type="date" id="input_end" name="project_end">
+            <input type="date" id="input_end" name="project_end" value="<?= $result['project_end'] ?>" >
         </div>
         <div>
             <label for="input_context">Contexte</label>
-            <textarea name="project_context" id="input_context" cols="30" rows="10"></textarea>
+            <textarea name="project_context" id="input_context" cols="30" rows="10"><?= $result['project_context'] ?></textarea>
         </div>
         <div>
             <label for="input_specs">Spécifications fonctionnelles</label>
-            <textarea name="project_specs" id="input_specs" cols="30" rows="10"></textarea>
+            <textarea name="project_specs" id="input_specs" cols="30" rows="10"><?= $result['project_specs'] ?></textarea>
         </div>
         <div>
             <label for="input_githublink">Lien GitHub</label>
-            <input type="text" id="input_githublink" name="project_githublink">
+            <input type="text" id="input_githublink" name="project_githublink" value="<?= $result['project_githublink'] ?>">
         </div>
         <div>
             <label for="input_link">Lien du projet</label>
-            <input type="text" id="input_link" name="project_link">
+            <input type="text" id="input_link" name="project_link" value="<?= $result['project_link'] ?>">
         </div>
         <div>
             <input type="hidden" name="project_id" value="<?= $result['project_id'] ?>">
@@ -65,6 +65,17 @@ if ($_SESSION['username']) {
 
 
     </form>
+
+    <form action="edit-picture-handler.php" method="post" enctype="multipart/form-data">
+<div>
+    <label for="input_picture">Aperçu</label>
+    <input type="file" id="input_picture" name="project_picture">
+    <input type="hidden" name="project_id" value='<?= $result["project_id"] ?>'>
+    <div><input type="submit"></div>
+</div>
+</form>
+
+
     <a href="project-details.php?id=<?= $result['project_id'] ?>">Retour</a>
 </body>
 
